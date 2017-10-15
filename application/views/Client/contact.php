@@ -20,7 +20,7 @@ info@thehippogriff.com</span></div>
 		</div>
 		</div>
 
-<div class="container col-md-offset-8 col-md-4" style="background-color: #7c7c80">
+<div class="container col-md-offset-8 col-md-4" style="background-color: #e3e8f2">
 <h2>Get in Touch</h2>
 <div style="padding-top: 25px;"><input type="text" class="form-control" placeholder="Name" ">
 </div>
