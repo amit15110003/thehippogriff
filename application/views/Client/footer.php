@@ -3,8 +3,15 @@
 		<div class="row">
 			<div class="container">
 			<hr>
-				<div class="col-md-offset-3 col-md-6 text-center">
-					
+				<div class="col-md-offset-4 col-md-4">
+					<h3 class="theme-color text-center">Follow us</h3>
+					<ul class="footer-inline">
+				        <li><a href="#"><img src="<?php echo base_url();?>/media/image/FB-01" class="img-responsive center-block"> </a></li>
+				        <li><a href="#"><img src="<?php echo base_url();?>/media/image/Insta-01" class="img-responsive center-block"> </a></li>
+				        <li><a href="#"><img src="<?php echo base_url();?>/media/image/Mail-01" class="img-responsive center-block"> </a></li>
+				        <li><a href="#"><img src="<?php echo base_url();?>/media/image/twitter" class="img-responsive center-block"> </a></li>
+				        <li><a href="#"><img src="<?php echo base_url();?>/media/image/Youtube-01" class="img-responsive center-block"> </a></li>
+				     </ul>
 				</div>
 			</div>
 		</div>
