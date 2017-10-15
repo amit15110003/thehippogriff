@@ -10,10 +10,31 @@
 	</div>
 </div>
 <div class="container product-details text-center">
-	<div class="col-md-offset-3 col-md-3">
-		<a  href="">Additional Information</a>
-	</div>
-	<div class="col-md-3">
-		<a  href="">Review</a>
-	</div>
+	 <ul class="nav nav-tabs" role="tablist">
+	    <li role="presentation" class="active"><a href="#info" aria-controls="info" role="tab" data-toggle="tab">Additional Information</a></li>
+	    <li role="presentation"><a href="#comment" aria-controls="coment" role="tab" data-toggle="tab">Comment</a></li>
+	  </ul>
+
+	  <!-- Tab panes -->
+	  <div class="tab-content">
+	    <div role="tabpanel" class="tab-pane active" id="info">
+	    	 <table class="table table-striped">
+			    <tbody>
+			      <tr>
+			        <td>1</td>
+			        <td>Anna</td>
+			      </tr>
+			      <tr>
+			        <td>2</td>
+			        <td>Debbie</td>
+			      </tr>
+			      <tr>
+			        <td>3</td>
+			        <td>John</td>
+			      </tr>
+			    </tbody>
+			  </table>
+	    </div>
+	    <div role="tabpanel" class="tab-pane" id="comment">...</div>
+	  </div>
 </div>
