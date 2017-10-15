@@ -39,7 +39,7 @@
 <div class="container">
 	
 		<div style="padding-top: 40px;">
-			<h5 style="text-align: center;"<a href="#">LOST YOUR PASSWORD?</a></h5>
+			<h5 style="text-align: center;"><a href="#">LOST YOUR PASSWORD?</a></h5>
 
 		</div>
 		<div class="col-md-offset-5 col-md-2" style="background-color: #000;height: 2px;"></div>
