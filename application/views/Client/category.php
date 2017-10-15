@@ -1,3 +1,5 @@
+<div class="spacer"></div>
+<div id="startchange"></div>
 <div class="container-fluid category-header">
 	<h1 class="text-center">Category</h1>
 </div>

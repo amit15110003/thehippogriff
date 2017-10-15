@@ -49,7 +49,7 @@
     <script type="text/javascript">
     	$(document).ready(function(){       
 		   var scroll_start = 0;
-		   var startchange = $('#carousel-example-generic');
+		   var startchange = $('#startchange');
 		   var offset = startchange.offset();
 		    if (startchange.length){
 		   $(document).scroll(function() { 
