@@ -1,18 +1,24 @@
 	<!--footer-->
 	<footer>
 		<div class="row">
-			<div class="container">
 			<hr>
-				<div class="col-md-offset-4 col-md-4">
-					<h3 class="theme-color text-center">Follow us</h3>
-					<ul class="footer-inline">
-				        <li><a href="#"><img src="<?php echo base_url();?>/media/image/FB-01" class="img-responsive center-block"> </a></li>
-				        <li><a href="#"><img src="<?php echo base_url();?>/media/image/Insta-01" class="img-responsive center-block"> </a></li>
-				        <li><a href="#"><img src="<?php echo base_url();?>/media/image/Mail-01" class="img-responsive center-block"> </a></li>
-				        <li><a href="#"><img src="<?php echo base_url();?>/media/image/twitter" class="img-responsive center-block"> </a></li>
-				        <li><a href="#"><img src="<?php echo base_url();?>/media/image/Youtube-01" class="img-responsive center-block"> </a></li>
-				     </ul>
-				</div>
+			<h3 class="theme-color text-center">Follow us</h3>
+			<div class="container center-block">
+						<div class="text-center" style="display:inline-block;">
+					          <a href=""><img class="img-responsive center-block" src="<?php echo base_url();?>/media/image/FB-01" style="position: relative;overflow: hidden;"></a>
+					    </div>
+						<div class="text-center" style="display:inline-block;">
+					         <a href=""> <img class="img-responsive center-block" src="<?php echo base_url();?>/media/image/Insta-01" style="position: relative;overflow: hidden;"></a>
+					    </div>
+						<div class="text-center" style="display:inline-block;">
+					          <a href=""><img class="img-responsive center-block" src="<?php echo base_url();?>/media/image/Mail-01" style="position: relative;overflow: hidden;"></a>
+					    </div>
+						<div class="text-center" style="display:inline-block;">
+					          <a href=""><img class="img-responsive center-block" src="<?php echo base_url();?>/media/image/twitter" style="position: relative;overflow: hidden;"></a>
+					    </div>
+						<div class="text-center" style="display:inline-block;">
+					          <a href=""><img class="img-responsive center-block" src="<?php echo base_url();?>/media/image/Youtube-01" style="position: relative;overflow: hidden;"></a>
+					    </div>
 			</div>
 		</div>
 		<div class="row">
@@ -43,13 +49,13 @@
     <script type="text/javascript">
     	$(document).ready(function(){       
 		   var scroll_start = 0;
-		   var startchange = $('#carousel-example-generic');
+		   var startchange = $('#startchange');
 		   var offset = startchange.offset();
 		    if (startchange.length){
 		   $(document).scroll(function() { 
 		      scroll_start = $(this).scrollTop();
 		      if(scroll_start > offset.top) {
-		          $(".navbar-default").css('background-color', '#fff');
+		          $('.navbar-default').css({"background-color":"#fff","color":"#000 !important"});
 		       } else {
 		          $('.navbar-default').css('background-color', 'transparent');
 		       }

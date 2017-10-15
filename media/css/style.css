@@ -1,21 +1,30 @@
 .navbar-default{
     background:transparent;
+    height: 60px;
     border:none !important;
 }
 .navbar-default:hover{
     background-color:#fff !important;
     border:none !important;
 }
+.navbar-nav li 
+{
+    padding-top: 5px;
+} 
 .navbar-nav li a{
-    color:#fff !important;
+    color:#14ad8f !important;
+    font-size: 18px;
 } 
 .navbar-nav li a:hover{
-    color:#1a1a1a;
     border-style: solid;
     border-width: 0px 0px 2px 0px;
      border-color: #000;
     color:#000 !important;
 } 
+.navbar-brand
+{	
+	font-size: 24px;
+}
 .collapse.in{
     
     background-color:#f0f0f0 !important;
@@ -84,4 +93,104 @@
 .theme-color
 {
 	color: #14ad8f;
+}
+
+.category-header
+{	
+	background-color: #e3e8f2;
+}
+.category-header h1
+{	padding-top: 50px;
+	padding-bottom: 30px;
+}
+.category-subheader
+{
+	color: #7c7c80;
+    font-size: 1.6rem;
+    font-family: "Poppins", sans-serif;
+    line-height: 2.14286;
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+}
+.category-sort-inline
+{
+	list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+}
+
+.category-sort-inline li {
+    float: left;
+}
+.category-sort-inline li a {
+    display: block;
+    color: #000;
+    font-size: 16px;
+    text-align: center;
+    padding: 0px 25px 0px 0px;
+    text-decoration: none;
+    padding-bottom: 5px;
+}
+.category-sort-inline li a:hover {
+   border-style: solid;
+   border-width: 0px 0px 1px 0px;
+   border-color: #000;
+   color:#000 !important;
+}
+.category-sort-inline-right
+{
+	list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+}
+
+.category-sort-inline-right li {
+    float: right;
+}
+.category-sort-inline-right li a {
+    display: block;
+    color: #000;
+    font-size: 16px;
+    text-align: center;
+    padding: 0px 25px 0px 0px;
+    text-decoration: none;
+    padding-bottom: 5px;
+}
+.category-sort-inline-right li a:hover {
+   border-style: solid;
+   border-width: 0px 0px 1px 0px;
+   border-color: #000;
+   color:#000 !important;
+}
+.product:hover
+{
+
+}
+.single-product
+{
+	padding-top: 120px;
+}
+.single-product h1
+{
+	font-size: 2.1em;
+	color: #7c7c80;
+}
+.single-product h3
+{
+	font-size: 1.3em;
+	color: #7c7c80;
+}
+.product-details
+{
+	padding-top: 40px;
+}
+.product-details a
+{
+	font-size: 1.5em;
+	color: #000;
+	text-decoration: none;
 }
