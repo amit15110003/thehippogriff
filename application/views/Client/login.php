@@ -44,3 +44,11 @@
 		</div>
 		<div class="col-md-offset-5 col-md-2" style="background-color: #000;height: 2px;"></div>
 </div>
+<div class="container" style="padding-bottom: 20px;">
+	<div>
+		<h4 class="col-md-offset-4 col-md-4"><b>Social Login</h4>
+	</div>
+	<div class="text-center col-md-offset-3 col-md-4"  style="display:inline-block;" >
+		 <a href=""><img class="img-responsive center-block" src="<?php echo base_url();?>/media/image/facebook.png" style="position: relative;overflow: hidden; width: 150px; height: 50px;"></a>
+	   </div>
+</div>
