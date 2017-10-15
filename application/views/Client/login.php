@@ -29,7 +29,7 @@
 		      <input type="checkbox"> Remember me 
 		    </label>
 		  </div>
-		  <button class="button" style="width: 350px; height: 70px; background-color: #000; border-color: #000; color: #fff;" > LOGIN</button>
+		  <button class="theme-btn"> LOGIN</button>
 		</form> 
 
 	</div>

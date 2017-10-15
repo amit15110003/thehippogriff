@@ -64,7 +64,7 @@
     color: #000;
     font-size: 12px;
     text-align: center;
-    padding: 0px 10px 10px 0px;
+    padding: 0px 20px 20px 0px;
     text-decoration: none;
 }
 
@@ -193,4 +193,12 @@
 	font-size: 1.5em;
 	color: #000;
 	text-decoration: none;
+}
+.theme-btn
+{
+	width: 350px; height: 70px; background-color: #14ad8f; border-color: #14ad8f; border-style: solid; color: #fff;
+}
+.theme-btn:hover
+{
+	width: 350px; height: 70px; background-color: #000; border-color: #000; color: #fff;
 }
