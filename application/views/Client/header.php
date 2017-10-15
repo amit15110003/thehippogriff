@@ -10,6 +10,7 @@
     <!-- Bootstrap -->
     <link href="<?php echo base_url();?>media/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?php echo base_url();?>media/css/style.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>media/css/style1.css" rel="stylesheet">
   </head>
   <body>
   <!--header-->
