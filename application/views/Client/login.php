@@ -48,7 +48,12 @@
 	<div>
 		<h4 class="col-md-offset-4 col-md-4"><b>Social Login</h4>
 	</div>
-	<div class="text-center col-md-offset-3 col-md-4"  style="display:inline-block;" >
+	<div class="text-center col-md-offset-4 col-md-4"  style="display:inline-block;" >
+		<div class="col-md-6">
 		 <a href=""><img class="img-responsive center-block" src="<?php echo base_url();?>/media/image/facebook.png" style="position: relative;overflow: hidden; width: 150px; height: 50px;"></a>
+		 </div>
+		 <div class="col-md-6">
+		 <a href=""><img class="img-responsive center-block" src="<?php echo base_url();?>/media/image/twitter1.png" style="position: relative;overflow: hidden; width: 150px; height: 50px;"></a>
+		 </div>
 	   </div>
 </div>
