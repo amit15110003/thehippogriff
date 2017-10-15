@@ -1,0 +1,71 @@
+.navbar-default{
+    background:transparent;
+    border:none !important;
+}
+.navbar-nav>li>a:hover{
+    color:#1a1a1a;
+} 
+.collapse.in{
+    
+    background-color:#f0f0f0 !important;
+}
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:hover, .navbar-inverse .navbar-nav>.active>a:focus
+.spacer{
+   background-color:#888;   
+}
+
+.spacer{
+    height:1px;
+}
+.gap
+{
+	height: 50px;
+}
+.showcase
+{
+	
+}
+
+.footer-inline
+{
+	list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+}
+.footer-inline>li {
+    float: left;
+}
+
+.footer-inline>li>a {
+    display: block;
+    color: #000;
+    font-size: 12px;
+    text-align: center;
+    padding: 0px 10px;
+    text-decoration: none;
+}
+
+.carousel,
+.item,
+.active {
+    height: 100%;
+}
+
+
+.carousel-inner {
+    height: 100%;
+}
+
+/* Background images are set within the HTML using inline CSS, not here */
+
+.fill {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
