@@ -34,6 +34,5 @@ info@thehippogriff.com</span></div>
 <div style="padding-top: 30px;"><button class="theme-btn" > SEND MESSAGE</button></div>
 </div>
 </div>
-
-	
 </div>
+<div class="container"></div>

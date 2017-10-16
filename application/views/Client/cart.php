@@ -39,9 +39,8 @@
                 </tbody>
                 
             </table>
-					<div class="container col-md-offset-4 col-md-4">
-						<div style="padding-top: 30px; text-align: center;">
-						<button class="theme-btn" > PROCEED TO CHECKOUT</button></div>
+					<div class="container col-md-offset-4 col-md-4" >
+						<button class="theme-btn-lg col-sm-12 col-md-12" > PROCEED TO CHECKOUT</button>
 					</div>
                 <table class="table table-hover">
                 <tbody>
@@ -69,5 +68,6 @@
     </div>
 </div>
 </div>
-<div style="padding-top: 30px; text-align: center;"><button class="theme-btn" > PROCEED TO CHECKOUT</button></div>
-
+<div class="col-md-offset-4 col-md-4" ><button class="theme-btn-lg col-sm-12 col-md-12" > PROCEED TO CHECKOUT</button></div>
+<div class="row"> 
+</div>
