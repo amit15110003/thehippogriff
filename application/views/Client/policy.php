@@ -5,7 +5,7 @@
 </div>
 <div class="container">
 
-			<p >We have created this privacy statement in order to demonstrate our firm commitment to privacy.  This document discloses our information gathering and usage practices.</p>
+<p >We have created this privacy statement in order to demonstrate our firm commitment to privacy.  This document discloses our information gathering and usage practices.</p>
 <p >This Privacy Policy (“Privacy Policy”) applies to <a href="http://thehippogriff.com/" target="_blank" data-saferedirecturl="https://www.google.com/url?hl=en&amp;q=http://thehippogriff.com&amp;source=gmail&amp;ust=1487421076911000&amp;usg=AFQjCNFBevW7h1r_mFAcp46JWJ5mYM3lPQ">thehippogriff.com</a> (“Website”) and the services of The Hippogriff (hereinafter referred as the “firm” or “We”).</p>
 <p >The purpose of Privacy Policy is to ensure continuing commitment to the privacy of Personal Information provided by those visiting, registering, and interacting with the said website; further, for the purpose of this Privacy Policy, Personal Information shall mean, any and all, information collected in accordance with this Privacy Policy. The terms “users” or “you” as used in this Privacy Policy, refer to Persons, who access or use the Website and share their Personal Information.</p>
 <p >A. COLLECTION AND USE OF PERSONAL INFORMATION</p>

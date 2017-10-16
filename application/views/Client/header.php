@@ -32,7 +32,7 @@
         <li><a href="#">Link <span class="sr-only">(current)</span></a></li>
         <li><a href="#">Link</a></li>
       </ul>
-      <div class="navbar-header" style="margin-left: 33%;">
+      <div class="navbar-header" style="margin-left: 30%;">
         <a class="navbar-brand" href="#">
           THE HIPPOGRIFF
         </a>
