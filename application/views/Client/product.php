@@ -5,7 +5,15 @@
 		
 	</div>
 	<div class="col-md-6 text-center">
-		<h1>Abstract Colours</h1>
+		<h1>Abstract Colours </h1>
+		<div class="row">
+			<div class="col-md-6">
+				
+			</div>
+			<div class="col-md-6">
+				
+			</div>
+		</div>
 		<h4>High quality prints on both sides of the sleeve. Waterproof and cushioned material with a smooth zipper. Available in 13 inches and 15 inches.  The artwork on this sleeve is composed by Aleksandr Volodchenkov.</h4>
 		<form class="">
 			<div class="row">
@@ -21,7 +29,7 @@
 			</div>
 			<br><br>
 			<div class="row">
-				<button type="submit" class="btn theme-btn-lg"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Add To Cart</button>
+				<button type="submit" class="btn theme-btn-lg col-md-6 col-md-offset-3 col-xs-12"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Add To Cart</button>
 			</div>
 		</form>
 	</div>
