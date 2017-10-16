@@ -60,14 +60,21 @@
 }
 
 .footer-inline li a {
-    display: block;
+    display: inline-block;
     color: #000;
     font-size: 12px;
     text-align: center;
     padding: 0px 20px 20px 0px;
     text-decoration: none;
 }
-
+.follow-icon
+{
+    display:inline-block;
+}
+.follow-icon-img
+{
+    position: relative;overflow: hidden;border-radius: 50%;
+}
 .carousel,
 .item,
 .active {
@@ -204,11 +211,11 @@
 }
 .theme-btn-lg
 {
-	height: 70px; background-color: #14ad8f; border-color: #14ad8f; border-style: solid; color: #fff;
+	height: 60px; background-color: #14ad8f; border-color: #14ad8f; border-style: solid; color: #fff;
 }
 .theme-btn-lg:hover
 {
-	 height: 70px; background-color: #000; border-color: #000; color: #fff;
+	 height: 60px; background-color: #000; border-color: #000; color: #fff;
 }
 .card
 {   
@@ -322,4 +329,12 @@
 {
      border-style: solid;
     border-width: 1px 1px 1px 1px;
+}
+.subscribe
+{
+    padding: 10px 10px 60px 10px;
+    background-color: #ccc;
+    border-radius: 10px;
+    border: solid 2px #14ad8f;
+    color: #fff;
 }

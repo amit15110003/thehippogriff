@@ -2,23 +2,42 @@
 	<footer>
 		<div class="row">
 			<hr>
-			<h3 class="theme-color text-center">Follow us</h3>
-			<div class="container center-block">
-						<div class="text-center" style="display:inline-block;">
-					          <a href=""><img class="img-responsive center-block" src="<?php echo base_url();?>/media/image/FB-01" style="position: relative;overflow: hidden;"></a>
+			
+			<div class="container">
+				<div class="col-md-4">
+					
+				</div>
+				<div class="col-md-4">
+					
+				</div>
+				<div class="col-md-4 text-center">
+					<div class="">
+					<h3 class="theme-color text-center">Follow us</h3>
+						<div class="follow-icon text-center">
+					          <a href="" class="follow-icon-img"><img class="img-responsive  center-block" src="<?php echo base_url();?>/media/image/FB-01"></a>
 					    </div>
-						<div class="text-center" style="display:inline-block;">
-					         <a href=""> <img class="img-responsive center-block" src="<?php echo base_url();?>/media/image/Insta-01" style="position: relative;overflow: hidden;"></a>
+						<div class=" follow-icon text-center">
+					         <a href="" class="follow-icon-img"> <img class="img-responsive  center-block" src="<?php echo base_url();?>/media/image/Insta-01" ></a>
 					    </div>
-						<div class="text-center" style="display:inline-block;">
-					          <a href=""><img class="img-responsive center-block" src="<?php echo base_url();?>/media/image/Mail-01" style="position: relative;overflow: hidden;"></a>
+						<div class="follow-icon text-center" >
+					          <a href="" class="follow-icon-img"><img class="img-responsive  center-block" src="<?php echo base_url();?>/media/image/Mail-01" ></a>
 					    </div>
-						<div class="text-center" style="display:inline-block;">
-					          <a href=""><img class="img-responsive center-block" src="<?php echo base_url();?>/media/image/twitter" style="position: relative;overflow: hidden;"></a>
+						<div class="follow-icon text-center" >
+					          <a href="" class="follow-icon-img"><img class="img-responsive  center-block" src="<?php echo base_url();?>/media/image/twitter" ></a>
 					    </div>
-						<div class="text-center" style="display:inline-block;">
-					          <a href=""><img class="img-responsive center-block" src="<?php echo base_url();?>/media/image/Youtube-01" style="position: relative;overflow: hidden;"></a>
+						<div class="follow-icon text-center" >
+					          <a href="" class="follow-icon-img"><img class="img-responsive  center-block" src="<?php echo base_url();?>/media/image/Youtube-01" ></a>
 					    </div>
+					</div>
+					<br>
+					<div class="subscribe">
+						<div class="text-center">
+							<h3 class="text-center">Subscribe</h3>
+							<input type="" name="" class=" col-md-8 theme-form">
+							<button class="btn theme-btn col-md-4">Submit</button>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 		<div class="row">
