@@ -7,6 +7,9 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>THE HIPPOGRIFF</title>
 
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="<?php echo base_url();?>media/js/jquery.elevatezoom.js"></script>
     <!-- Bootstrap -->
     <link href="<?php echo base_url();?>media/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?php echo base_url();?>media/css/style.css" rel="stylesheet">

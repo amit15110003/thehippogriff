@@ -30,13 +30,6 @@
 					    </div>
 					</div>
 					<br>
-					<div class="subscribe">
-						<div class="text-center">
-							<h3 class="text-center">Subscribe</h3>
-							<input type="" name="" class=" col-md-8 theme-form">
-							<button class="btn theme-btn col-md-4">Submit</button>
-						</div>
-					</div>
 				</div>
 			</div>
 		</div>
@@ -61,8 +54,7 @@
 	</footer>
 	<!--footerend-->
 
-	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="<?php echo base_url();?>media/js/bootstrap.min.js"></script>
     <script type="text/javascript">
@@ -82,5 +74,8 @@
 		    }
 		});
     </script>
+    <script>
+	   $("#zoom_01").elevateZoom(); 
+	</script>
   </body>
 </html>
