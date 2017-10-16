@@ -177,11 +177,11 @@
 .single-product h1
 {
 	font-size: 2.1em;
-	color: #7c7c80;
+	color: #000;
 }
-.single-product h3
+.single-product h4
 {
-	font-size: 1.3em;
+	font-size: 1.2em;
 	color: #7c7c80;
 }
 .product-details
@@ -204,11 +204,11 @@
 }
 .theme-btn-lg
 {
-	width: 350px; height: 70px; background-color: #14ad8f; border-color: #14ad8f; border-style: solid; color: #fff;
+	height: 70px; background-color: #14ad8f; border-color: #14ad8f; border-style: solid; color: #fff;
 }
 .theme-btn-lg:hover
 {
-	width: 350px; height: 70px; background-color: #000; border-color: #000; color: #fff;
+	 height: 70px; background-color: #000; border-color: #000; color: #fff;
 }
 .card
 {   
@@ -266,9 +266,60 @@
     border-width: 0px 0px 2px 0px;
      border-color: #000;
 }
-
+.btn
+{
+    border-radius: 0px !important;
+}
+@media screen and (max-width: 1280px)
+.quantity {
+    width: 100px;
+}
+@media screen and (max-width: 1440px)
+.quantity {
+    width: 140px;
+}
+.quantity {
+    float: none;
+    width: 160px;
+    display: inline-block;
+    margin-right: 10px;
+    margin: 0 4px 0 0;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    padding: 7px;
+    border: 1px solid #e4e6eb;
+}
+.quantity .decrease {
+    cursor: pointer;
+    padding: 0 6px;
+    display: inline-block;
+    background: none;
+    border: none;
+}
+.quantity .qty {
+    width: 3.631em;
+    text-align: center;
+}
+.quantity .qty {
+    -moz-appearance: textfield;
+    border-width: 0;
+    width: 66px;
+    font-size: 16px;
+    font-size: 1.6rem;
+    color: #23232c;
+}
+.increase .quantity .decrease {
+    padding: 0;
+}
+.quantity .increase,.quantity .decrease {
+    cursor: pointer;
+    padding: 0 6px;
+    display: inline-block;
+    background: none;
+    border: none;
+}
 .quantity
 {
-    list-style-type: none;
-    float: left;
+     border-style: solid;
+    border-width: 1px 1px 1px 1px;
 }
