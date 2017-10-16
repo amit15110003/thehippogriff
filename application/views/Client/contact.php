@@ -11,7 +11,7 @@
 		<div>
 			<span class="glyphicon glyphicon-home" style="padding-top: 40px; font-size: 15px;" aria-hidden="true">           	<b> ADDRESS</b>  B74, Chattarpur Extension, New Delhi</span>
 			<div><span class="glyphicon glyphicon-earphone" style="padding-top: 40px; font-size: 15px;" aria-hidden="true">           	<b> PHONE
-</b>  +919654925861</span></div>
+</b>   +919654925861</span></div>
 			
 			<div><span class="glyphicon glyphicon-home" style="padding-top: 40px; padding-bottom: 50px; font-size: 15px;" aria-hidden="true">           	<b> EMAIL</b>  
 info@thehippogriff.com</span></div>
@@ -30,7 +30,8 @@ info@thehippogriff.com</span></div>
 </div>
 <div style="padding-top: 25px; padding-bottom: 25px;"><input type="text" class="form-control" placeholder="Subject" ">
 <div style="padding-top: 25px; padding-bottom: 35px padding-top: 125px;"><input type="text" class="form-control" placeholder="Message" ">
-<button class="theme-btn" style="padding-bottom: 25px;"> SEND MESSAGE</button>
+
+<div style="padding-top: 30px;"><button class="theme-btn" > SEND MESSAGE</button></div>
 </div>
 </div>
 
