@@ -11,6 +11,7 @@
 					
 				</div>
 				<div class="col-md-4 text-center">
+					<div class="">
 					<h3 class="theme-color text-center">Follow us</h3>
 						<div class="follow-icon text-center">
 					          <a href="" class="follow-icon-img"><img class="img-responsive  center-block" src="<?php echo base_url();?>/media/image/FB-01"></a>
@@ -27,6 +28,15 @@
 						<div class="follow-icon text-center" >
 					          <a href="" class="follow-icon-img"><img class="img-responsive  center-block" src="<?php echo base_url();?>/media/image/Youtube-01" ></a>
 					    </div>
+					</div>
+					<br>
+					<div class="subscribe">
+						<div class="text-center">
+							<h3 class="text-center">Subscribe</h3>
+							<input type="" name="" class=" col-md-8 theme-form">
+							<button class="btn theme-btn col-md-4">Submit</button>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
