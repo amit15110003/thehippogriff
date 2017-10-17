@@ -57,6 +57,7 @@
 	
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="<?php echo base_url();?>media/js/bootstrap.min.js"></script>
+    <script src="<?php echo base_url();?>media/js/bootstrap-dropdownhover.js"></script>
     <script type="text/javascript">
     	$(document).ready(function(){       
 		   var scroll_start = 0;

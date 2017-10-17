@@ -7,12 +7,18 @@
     background-color:#fff !important;
     border:none !important;
 }
+.navbar-header a
+{   
+    padding-top: 5px;
+    color:#000 !important;
+    font-size: 18px;
+}
 .navbar-nav li 
 {
     padding-top: 5px;
 } 
 .navbar-nav li a{
-    color:#14ad8f !important;
+    color:#000 !important;
     font-size: 18px;
 } 
 .navbar-nav li a:hover{
@@ -21,6 +27,29 @@
      border-color: #000;
     color:#000 !important;
 } 
+.navbar-mobile
+{
+  border:none;   
+}
+.navbar-mobile 
+{  
+    font-size: 1em;
+}
+@media only screen and (max-width: 500px)
+{
+  .navbar-default
+  {
+    background-color:#fff !important;
+    height: 45px;
+    border:none !important;
+  }
+  .carousel
+  {
+    margin-top: 45px;
+   }
+ 
+}
+
 .navbar-brand
 {	
 	font-size: 24px;
@@ -330,3 +359,51 @@
      border-style: solid;
     border-width: 1px 1px 1px 1px;
 }
+.slider-btn
+{
+    background-color: transparent;
+    color: #fff;
+    border: solid 2px #fff;
+}
+.slider-btn:hover
+{
+    background-color: #fff;
+    color: #000;
+    border-style: solid 2px #fff;
+}
+.carousel-caption {
+    top: 30%;
+    bottom: auto;
+    height: 100%;
+}
+.carousel-caption-left {
+    left: 10%;
+}
+.carousel-caption-right {
+    right: 10%;
+}
+.showcase-1{
+    height: 450px;
+}
+.showcase-content:hover
+{
+        background-color: #000;
+        opacity: .6;
+}
+.showcase .h3
+{
+    color: #000;
+}
+.dropdown ul li a
+{
+        font-size: 1em;
+}
+ul li.hz 
+{
+        display: inline-flex !important;
+}
+.dropdown-toggle
+{
+        font-size: 1em;
+}
+
