@@ -385,8 +385,8 @@
 .showcase:hover h3
 {   color: #fff;
     background-color: #000;margin: auto;
-    padding-left: 20%;padding-right: 20%;
-    padding-top:10%;padding-bottom:10%;
+    padding-left: 25%;padding-right: 25%;
+    padding-top:15%;padding-bottom:15%;
     opacity: 0.6;
     position: absolute;
     display: block; 
@@ -410,4 +410,12 @@ ul li.hz
 .dropdown-toggle
 {
         font-size: 1em;
+}
+.no-gutter [class*="-6"] {
+    padding-left:0;
+    padding-right:0;
+}
+.no-gutter [class*="-12"] {
+    padding-left:0;
+    padding-right:0;
 }
