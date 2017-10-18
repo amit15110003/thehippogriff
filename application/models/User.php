@@ -53,13 +53,6 @@ class user extends CI_Model
 		return $this->db->update('user', $data);
 	}
 
-	function updatepass($id, $password)
-        {	
-    	$data = array('password'=>$password);
-    	$this->db->where('id', $id);
-		return $this->db->update('user', $data);
-	}
-	
 	public function showcategory()
 	{
 		$query=$this->db->get('category');;
@@ -71,16 +64,9 @@ class user extends CI_Model
 		$query=$this->db->get('wishlist');;
 		return $query->result();
 	}
-	public function showcart($id,$uid)
+	public function showcart($id)
 	{	
-		$this->db->where('uid', $uid);
-		$this->db->where('productid', $id);
-		$query=$this->db->get('cart');;
-		return $query->result();
-	}
-	public function showcart_user($uid)
-	{	
-		$this->db->where('uid', $uid);
+		$this->db->where('uid', $id);
 		$query=$this->db->get('cart');;
 		return $query->result();
 	}
@@ -254,7 +240,7 @@ class user extends CI_Model
 		return $query->result();
 	}
 	public function showproduct_mostview_cat($category)
-	{ 	$this->db->limit(4);
+	{ 	$this->db->limit(10);
 		$this->db->order_by("view", "desc");
 		$this->db->where('category',$category);
 		$this->db->where('status', "hosted");
@@ -363,13 +349,6 @@ class user extends CI_Model
 	{	
 		$this->db->where('uid',$id);
 		$query=$this->db->get('delivery');
-		return $query->result();
-	}
-	public function showorder($id)
-	{	
-		$this->db->order_by("id", "desc");
-		$this->db->where('uid', $id);
-		$query=$this->db->get('itemorder');
 		return $query->result();
 	}
 	public function showslider()

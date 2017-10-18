@@ -38,13 +38,13 @@
 			<hr>
 				<div class="col-md-8">
 					<ul class="footer-inline">
-				        <li><a href="#">Copyright © 2017 </a></li>
-				        <li><a href="#">About us</a></li>
+				        <li><a href="">Copyright © 2017 </a></li>
+				        <li><a href="<?php echo base_url("index.php/home/about"); ?>">About us</a></li>
 				        <li><a href="#"> Blog </a></li>
-				        <li><a href="#">FAQs</a></li>
-				        <li><a href="#"> Contact us </a></li>
-				        <li><a href="#">Terms & Conditions</a></li>
-				        <li><a href="#">Privacy Policy</a></li>
+				        <li><a href="<?php echo base_url("index.php/home/faqs"); ?>">FAQs</a></li>
+				        <li><a href="<?php echo base_url("index.php/home/contact"); ?>"> Contact us </a></li>
+				        <li><a href="<?php echo base_url("index.php/home/terms_and_condition"); ?>">Terms & Conditions</a></li>
+				        <li><a href="<?php echo base_url("index.php/home/privacy_policy"); ?>">Privacy Policy</a></li>
 				     </ul>
 				</div>
 				<div class="col-md-4">
@@ -77,6 +77,33 @@
     </script>
     <script>
 	   $("#zoom_01").elevateZoom(); 
+	</script>
+	<script type="text/javascript">
+		var $item = $('.carousel .item'); 
+		var $wHeight = $(window).height();
+		$item.eq(0).addClass('active');
+		$item.height($wHeight); 
+		$item.addClass('full-screen');
+
+		$('.carousel img').each(function() {
+		  var $src = $(this).attr('src');
+		  var $color = $(this).attr('data-color');
+		  $(this).parent().css({
+		    'background-image' : 'url(' + $src + ')',
+		    'background-color' : $color
+		  });
+		  $(this).remove();
+		});
+
+		$(window).on('resize', function (){
+		  $wHeight = $(window).height();
+		  $item.height($wHeight);
+		});
+
+		$('.carousel').carousel({
+		  interval: 6000,
+		  pause: "false"
+		});
 	</script>
   </body>
 </html>

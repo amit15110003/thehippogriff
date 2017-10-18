@@ -68,13 +68,13 @@ class Home extends CI_Controller {
 		$this->load->view('client/contact');
 		$this->load->view('client/footer');
 	}
-	public function terms()
+	public function terms_and_condition()
 	{	
 		$this->load->view('client/header');
 		$this->load->view('client/terms');
 		$this->load->view('client/footer');
 	}
-	public function policy()
+	public function privacy_policy()
 	{	
 		$this->load->view('client/header');
 		$this->load->view('client/policy');

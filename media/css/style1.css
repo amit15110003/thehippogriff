@@ -3,7 +3,9 @@
 	background-color: #e3e8f2;
 }
 .page-header h1
-{	padding-top: 50px;
+{	
+    margin-top:60px;
+    padding-top: 30px;
 	padding-bottom: 30px;
 	font-size: 1.8em;
 	text-align: center;
