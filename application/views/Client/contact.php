@@ -31,7 +31,8 @@ info@thehippogriff.com</span></div>
 <div style="padding-top: 25px; padding-bottom: 25px;"><input type="text" class="form-control" placeholder="Subject" ">
 <div style="padding-top: 25px; padding-bottom: 35px padding-top: 125px;"><input type="text" class="form-control" placeholder="Message" ">
 
-<div style="padding-top: 30px;"><button class="theme-btn" > SEND MESSAGE</button></div>
+<div style="padding-top: 30px;"><button class="theme-btn-lg col-md-12" > SEND MESSAGE</button></div>
+<br><br><br>
 </div>
 </div>
 </div>

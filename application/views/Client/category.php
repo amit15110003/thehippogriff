@@ -17,8 +17,35 @@
 	</div>
 	<div class="col-md-4">
 	  <ul class="category-sort-inline-right">
-        <li><a class="text-center" href="#"><span class="glyphicon glyphicon-filter" aria-hidden="true"> Filter</span></a></li>
-      </ul>
+        <li><a class="text-center" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-filter" aria-hidden="true"> Filter</span></a></li>
+	  </ul>
+      <!-- Modal -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+		      </div>
+		      <div class="modal-body">
+		        <h4>Price</h4>
+                           <div class="offset-top-20">
+                              <div class="rd-range-container">
+                                 <div data-min="0" data-max="250000" data-start="[0, 50000]" data-step="10" data-tooltip="false" data-min-diff="10" data-input=".rd-range-input-value-2" data-input-2=".rd-range-input-value-3" class="rd-range" onclick="searchFilter()" id="price"></div>
+                                 <div class="rd-range-input-container offset-top-20 range-justify reveal-flex range-middle">
+                                    <div class="text-primary text-sm-right">
+                                       <label class="text-regular">Price:</label> &#8377;<span id="range-2" class="rd-range-input-value rd-range-input-value-2"></span>&#8212;<span id="range-3" class="rd-range-input-value rd-range-input-value-3"></span>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn theme-btn-lg col-md-12 col-xs-12">Filter</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
 	</div>
 </div>
 <div class="container-fluid">
