@@ -61,7 +61,7 @@
                 $details=$this->user->showcategory();
                 foreach ($details as $row ) {?>
             <li>
-                <a href="<?php echo base_url("index.php/product/view/$row->category"); ?>"><?php echo $row->category;?></a>
+                <a href="<?php echo base_url("index.php/product/category/$row->category"); ?>"><?php echo $row->category;?></a>
             </li>
             <?php }?>
           </ul>

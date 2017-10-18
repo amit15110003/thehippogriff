@@ -19,7 +19,7 @@ class Product extends CI_Controller {
 		$this->load->view('single-product.php',$details);
 	}
 
-	public function view($category)
+	public function category($category)
 	{	
 		$category = str_replace('%20', ' ', $category);
 		$config = array();
@@ -35,9 +35,9 @@ class Product extends CI_Controller {
         $details["links"] = $this->pagination->create_links();
 		$details['query3']=$this->user->showpurity();
 		$details['categoryval']=$category;
-		$details['category']=$this->user->showcategory();
-		$this->load->view('header',$details);
-		$this->load->view('category.php',$details);
+		$this->load->view('client/header');
+		$this->load->view('client/category',$details);
+		$this->load->view('client/footer');
 	}
 
 	public function details($category,$id)
