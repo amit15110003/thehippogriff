@@ -98,7 +98,12 @@ class Home extends CI_Controller {
 		$this->load->view('client/checkout');
 		$this->load->view('client/footer');
 	}
-	
+	public function address()
+	{	
+		$this->load->view('client/header');
+		$this->load->view('client/address');
+		$this->load->view('client/footer');
+	}
 	
 
 }
