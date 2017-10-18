@@ -48,20 +48,31 @@
     <div class="gap"></div>
 	<div class="container">
 		<div class="row">
-			<div class="col-md-6">
+			<a class="showcase" href="">
+			<div class="col-md-6 showcase-content">
 				<img src="http://thehippogriff.com/wp-content/uploads/Jungle-Shadow_.jpg" class="img-responsive ">
+				<h3 class="text-center">LAPTOP SLEEVES</h3>
 			</div>
+			</a>
 			<div class="col-md-6">
 				<div class="row">
+				<a class="showcase" href="">
+					<div class="col-md-6 showcase-content">
+						<img src="http://thehippogriff.com/wp-content/uploads/Aloh.png" class="img-responsive ">
+						<h3 class="text-center">LAPTOP SLEEVES</h3>
+					</div>
+				</a>
+				<a href="">
 					<div class="col-md-6">
 						<img src="http://thehippogriff.com/wp-content/uploads/Aloh.png" class="img-responsive ">
 					</div>
-					<div class="col-md-6">
-						<img src="http://thehippogriff.com/wp-content/uploads/Aloh.png" class="img-responsive ">
-					</div>
-					<div class="col-md-12" style="padding-top: 2%">
+				</a>
+				<a href="" class="showcase" >
+					<div class="col-md-12 showcase-content" style="padding-top: 2%">
 						 <img src="http://thehippogriff.com/wp-content/uploads/Lu-Luce.png" class="img-responsive ">
+						 <h3 class="text-center">LAPTOP SLEEVES</h3>
 					</div>
+				</a>
 				</div>			
 			</div>
 		</div>
@@ -71,20 +82,29 @@
 		<div class="row">
 			<div class="col-md-6">
 				<div class="row">
+				<a href="">
 					<div class="col-md-6">
 						<img src="http://thehippogriff.com/wp-content/uploads/Aloh.png" class="img-responsive ">
 					</div>
+				</a>
+				<a href="">
 					<div class="col-md-6">
 						<img src="http://thehippogriff.com/wp-content/uploads/Aloh.png" class="img-responsive ">
 					</div>
+				</a>
+				<a href="">
 					<div class="col-md-12" style="padding-top: 2%">
 						 <img src="http://thehippogriff.com/wp-content/uploads/Lu-Luce.png" class="img-responsive ">
 					</div>
+				</a>
 				</div>			
 			</div>
+			<a href="">
 			<div class="col-md-6">
 				<img src="http://thehippogriff.com/wp-content/uploads/Jungle-Shadow_.jpg" class="img-responsive ">
+				<h3></h3>
 			</div>
+			</a>
 		</div>
 	</div>
     <div class="gap"></div>
