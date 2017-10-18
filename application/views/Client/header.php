@@ -58,8 +58,8 @@
           </a>
           <ul class="dropdown-menu">
             <?php 
-                $details['category']=$this->user->showcategory();
-                foreach ($category as $row ) {?>
+                $details=$this->user->showcategory();
+                foreach ($details as $row ) {?>
             <li>
                 <a href="<?php echo base_url("index.php/product/view/$row->category"); ?>"><?php echo $row->category;?></a>
             </li>
