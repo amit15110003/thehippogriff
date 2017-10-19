@@ -25,24 +25,24 @@
 		    <div class="modal-content">
 		      <div class="modal-header">
 		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-		        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+		        <h4 class="modal-title" id="myModalLabel">Filter</h4>
 		      </div>
-		      <div class="modal-body">
-		        <h4>Price</h4>
-                           <div class="offset-top-20">
-                              <div class="rd-range-container">
-                                 <div data-min="0" data-max="250000" data-start="[0, 50000]" data-step="10" data-tooltip="false" data-min-diff="10" data-input=".rd-range-input-value-2" data-input-2=".rd-range-input-value-3" class="rd-range" onclick="searchFilter()" id="price"></div>
-                                 <div class="rd-range-input-container offset-top-20 range-justify reveal-flex range-middle">
-                                    <div class="text-primary text-sm-right">
-                                       <label class="text-regular">Price:</label> &#8377;<span id="range-2" class="rd-range-input-value rd-range-input-value-2"></span>&#8212;<span id="range-3" class="rd-range-input-value rd-range-input-value-3"></span>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
+		      <form method="post">
+		      <div class="modal-body text-center">
+		        <input class="range-example-input-2" type="text" min="0" max="2000" value="100,1000" name="points" step="1" />
+		        <script>
+		            $(document).ready(function() {
+		              $(".range-example-input-2").asRange({
+		                range: true,
+		                limit: false
+		              });
+		            });
+		        </script>
 		      </div>
 		      <div class="modal-footer">
 		        <button type="button" class="btn theme-btn-lg col-md-12 col-xs-12">Filter</button>
 		      </div>
+		      </form>
 		    </div>
 		  </div>
 		</div>

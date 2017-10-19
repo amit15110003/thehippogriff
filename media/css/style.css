@@ -419,3 +419,173 @@ ul li.hz
     padding-left:0;
     padding-right:0;
 }
+/*
+ * @subsection   RD-Range
+ */
+.rd-range-container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 10px;
+  width: 100%;
+}
+
+.rd-range-input-container {
+  position: relative;
+}
+
+.rd-range-input-container label {
+  color: #ffa200;
+}
+
+.rd-range-input-container .rd-range-input-value {
+  border: none;
+  font-size: 14px;
+  text-align: left;
+  padding: 0 5px;
+  color: #ffa200;
+}
+
+.rd-range {
+  padding-left: 7px;
+  padding-right: 7px;
+  height: 18px;
+  margin-top: 25px;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.rd-range__wrap {
+  position: relative;
+  width: 100%;
+  background-color: #e8e8eb;
+  transition: background 100ms cubic-bezier(0.23, 1, 0.32, 1);
+  height: 4px;
+}
+
+.rd-range:hover .rd-range__pointer:before {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-animation-name: pulse;
+  animation-name: pulse;
+}
+
+.rd-range__pointer {
+  position: absolute;
+  cursor: pointer;
+  top: 1px;
+  left: 6%;
+  z-index: 1;
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  transform-origin: 0% 15%;
+  transition: transform 120ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  overflow: visible;
+  background-color: #141414;
+  background-clip: padding-box;
+}
+
+@media (min-width: 768px) {
+  .rd-range__pointer {
+    width: 12px;
+    height: 12px;
+  }
+  .rd-range__pointer:before {
+    content: '';
+    height: 26px;
+    width: 26px;
+    pointer-events: none;
+    background: rgba(127, 203, 201, 0.16);
+    position: absolute;
+    top: -7px;
+    left: -7px;
+    border-radius: 50%;
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);
+    transition: transform 100ms cubic-bezier(0.445, 0.05, 0.55, 0.95) 0ms, opacity 60ms cubic-bezier(0.445, 0.05, 0.55, 0.95) 0ms;
+    pointer-events: none;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+  }
+  .rd-range__pointer.active {
+    -webkit-transform: scale3d(1.5, 1.5, 1.5) translate(-50%, -50%);
+    -ms-transform: scale3d(1.5, 1.5, 1.5) translate(-50%, -50%);
+    transform: scale3d(1.5, 1.5, 1.5) translate(-50%, -50%);
+  }
+  .rd-range__pointer.active:before {
+    animation: none;
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+.rd-range__line {
+  background-color: #ffa200;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 4px;
+}
+
+.rd-range.hasTooltip .rd-range__pointer-tooltip {
+  font-size: 12px;
+  color: #fff;
+  opacity: 0;
+  transition: color 0.3s cubic-bezier(0.35, 0, 0.25, 1);
+}
+
+.rd-range.hasTooltip .rd-range__pointer {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 50%;
+  border-radius: 50%;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  -ms-transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0);
+  transition: transform 0.3s cubic-bezier(0.35, 0, 0.25, 1);
+}
+
+.rd-range.hasTooltip .rd-range__pointer:before {
+  content: none;
+}
+
+.rd-range.hasTooltip .rd-range__pointer:after {
+  position: absolute;
+  content: '';
+  left: 0;
+  border-radius: 16px;
+  top: 19px;
+  border-left: 14px solid transparent;
+  border-right: 14px solid transparent;
+  border-top: 16px solid #ffa200;
+  opacity: 0;
+  -webkit-transform: translate3d(0, -8px, 0);
+  -ms-transform: translate3d(0, -8px, 0);
+  transform: translate3d(0, -8px, 0);
+  transition: all 0.2s cubic-bezier(0.35, 0, 0.25, 1);
+}

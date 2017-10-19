@@ -16,6 +16,12 @@
     <link href="<?php echo base_url();?>media/css/bootstrap-dropdownhover.css" rel="stylesheet">
     <link href="<?php echo base_url();?>media/css/style.css" rel="stylesheet">
     <link href="<?php echo base_url();?>media/css/style1.css" rel="stylesheet">
+    <link rel="stylesheet" href="<?php echo base_url();?>media/css/prism.css">
+  <link rel="stylesheet" href="<?php echo base_url();?>media/css/main.css">
+  <script src="<?php echo base_url();?>media/js/jquery.toc.js"></script>
+  <script src="<?php echo base_url();?>media/js/prism.js"></script>
+  <link rel="stylesheet" href="<?php echo base_url();?>media/css/asRange.css">
+  <script src="<?php echo base_url();?>media/js/jquery-asRange.js"></script>
   </head>
   <body>
   <!--header-->

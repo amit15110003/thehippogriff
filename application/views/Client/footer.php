@@ -105,20 +105,25 @@
 		  pause: "false"
 		});
 	</script>
-	<script type="text/javascript">
-         function click (e) {
-           if (!e)
-             e = window.event;
-           if ((e.type && e.type == "contextmenu") || (e.button && e.button == 2) || (e.which && e.which == 3)) {
-             if (window.opera)
-               window.alert("");
-             return false;
-           }
+	<script>
+         function searchFilter() {
+             var keywords = $('#keywords').val();
+             var sortBy = $('#sortBy').val();
+             var price1 = document.getElementById("range-2").innerHTML;
+             var price2 = document.getElementById("range-3").innerHTML;
+             $.ajax({
+                 type: 'POST',
+                 url: '<?php echo base_url(); ?>index.php/product/viewsort/'+keywords,
+                 data:'&keywords='+keywords+'&sortBy='+sortBy+'&price1='+price1+'&price2='+price2,
+                 beforeSend: function () {
+                     $('.loading').show();
+                 },
+                 success: function (html) {
+                     $('#postList').html(html);
+                     $('.loading').fadeOut("slow");
+                 }
+             });
          }
-         if (document.layers)
-           document.captureEvents(Event.MOUSEDOWN);
-         document.onmousedown = click;
-         document.oncontextmenu = click;
       </script>
   </body>
 </html>
