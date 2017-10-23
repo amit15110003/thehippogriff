@@ -140,7 +140,15 @@ class user extends CI_Model
         return false;
 	}
 
-	public function get_product_id($id)
+	public function get_product_id($category,$title)
+	{	
+		$this->db->where('category', $category);
+		$this->db->where('title', $title);
+		$this->db->where('status', "hosted");
+		$query=$this->db->get('product');
+		return $query->result();
+	}
+	public function get_product_by_id($id)
 	{	
 		$this->db->where('id', $id);
 		$this->db->where('status', "hosted");
@@ -265,9 +273,9 @@ class user extends CI_Model
 
 	}
 
-	function update_review($productid,$rateupdate,$review)
+	function update_review($productid,$review)
     {	
-    	$data = array('rate'=>$rateupdate, 'review'=>$review);
+    	$data = array('review'=>$review);
     	$this->db->where('id', $productid);
 		return $this->db->update('product', $data);
 	}
@@ -293,6 +301,20 @@ class user extends CI_Model
 	   } else {
 	      $this->db->set('uid', $uid);
 	      $this->db->insert('delivery', $data);
+	   }
+	}
+	function insert_shipping($data,$uid)
+    {
+		 $this->db->where('uid',$uid);
+	   $q = $this->db->get('shipping');
+
+	   if ( $q->num_rows() > 0 ) 
+	   {
+	      $this->db->where('uid',$uid);
+	      $this->db->update('shipping',$data);
+	   } else {
+	      $this->db->set('uid', $uid);
+	      $this->db->insert('shipping', $data);
 	   }
 	}
 	function get_delivery_by_id($id)
@@ -351,101 +373,52 @@ class user extends CI_Model
 		$query=$this->db->get('delivery');
 		return $query->result();
 	}
+	public function shippingadd($id)
+	{	
+		$this->db->where('uid',$id);
+		$query=$this->db->get('shipping');
+		return $query->result();
+	}
 	public function showslider()
 	{
 		$query=$this->db->get('slider');;
 		return $query->result();
 	}
-	public function sortproduct($category,$gender,$price1,$price2,$purity)
+	public function sortproduct($category)
 	{ 
 		$this->db->where('category', $category);
-		if($purity!="null")
-		{
-
-		$this->db->where_in('purity', explode(',', $purity));
-		}
-		if($gender!="null")
-		{
-			$this->db->where_in('gender', explode(',', $gender));
-		}
-		$this->db->where('cost >=',$price1);
-		$this->db->where('cost <=',$price2);
 		$this->db->where('status', "hosted");
 		$query=$this->db->get('product');
 		return $query->result();
 	}
-	public function sortproduct_high($category,$gender,$price1,$price2,$purity)
+	public function sortproduct_high($category)
 	{ 
 		$this->db->order_by("cost", "desc");
 		$this->db->where('category', $category);
-		if($purity!="null")
-		{
-
-		$this->db->where_in('purity', explode(',', $purity));
-		}
-		if($gender!="null")
-		{
-			$this->db->where_in('gender', explode(',', $gender));
-		}
-		$this->db->where('cost >=',$price1);
-		$this->db->where('cost <=',$price2);
 		$this->db->where('status', "hosted");
 		$query=$this->db->get('product');
 		return $query->result();
 	}
-	public function sortproduct_low($category,$gender,$price1,$price2,$purity)
+	public function sortproduct_low($category)
 	{ 
 		$this->db->order_by("cost", "asc");
 		$this->db->where('category', $category);
-		if($purity!="null")
-		{
-
-		$this->db->where_in('purity', explode(',', $purity));
-		}
-		if($gender!="null")
-		{
-			$this->db->where_in('gender', explode(',', $gender));
-		}
-		$this->db->where('cost >=',$price1);
-		$this->db->where('cost <=',$price2);
 		$this->db->where('status', "hosted");
 		$query=$this->db->get('product');
 		return $query->result();
 	}
-	public function sortproduct_popular($category,$gender,$price1,$price2,$purity)
+	public function sortproduct_popular($category)
 	{ 
 		$this->db->order_by("rate", "desc");
 		$this->db->where('category', $category);
-		if($purity!="null")
-		{
-
-		$this->db->where_in('purity', explode(',', $purity));
-		}
-		if($gender!="null")
-		{
-			$this->db->where_in('gender', explode(',', $gender));
-		}
-		$this->db->where('cost >=',$price1);
-		$this->db->where('cost <=',$price2);
 		$this->db->where('status', "hosted");
 		$query=$this->db->get('product');
 		return $query->result();
 	}
-	public function sortproduct_new($category,$gender,$price1,$price2,$purity)
+	public function sortproduct_new($category)
 	{ 
 		$this->db->order_by("posted", "desc");
 		$this->db->where('category', $category);
-		if($purity!="null")
-		{
-
-		$this->db->where_in('purity', explode(',', $purity));
-		}
-		if($gender!="null")
-		{
-			$this->db->where_in('gender', explode(',', $gender));
-		}
-		$this->db->where('cost >=',$price1);
-		$this->db->where('cost <=',$price2);
 		$this->db->where('status', "hosted");
 		$query=$this->db->get('product');
 		return $query->result();

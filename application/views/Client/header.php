@@ -17,11 +17,20 @@
     <link href="<?php echo base_url();?>media/css/style.css" rel="stylesheet">
     <link href="<?php echo base_url();?>media/css/style1.css" rel="stylesheet">
     <link rel="stylesheet" href="<?php echo base_url();?>media/css/prism.css">
-  <link rel="stylesheet" href="<?php echo base_url();?>media/css/main.css">
   <script src="<?php echo base_url();?>media/js/jquery.toc.js"></script>
   <script src="<?php echo base_url();?>media/js/prism.js"></script>
   <link rel="stylesheet" href="<?php echo base_url();?>media/css/asRange.css">
   <script src="<?php echo base_url();?>media/js/jquery-asRange.js"></script>
+<link rel="icon" href="images/favicon.html" type="image/x-icon">
+<style type="text/css">
+  .wishadd{
+    background-color: #000;
+    border-color: #000;
+  }
+  .wishremove{
+    color: #888 !important;
+  }
+</style>
   </head>
   <body>
   <!--header-->
@@ -39,18 +48,33 @@
         <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
       </a>
       <a href="" class="navbar-toggle navbar-mobile pull-right">
-        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+        <?php echo $result = substr($this->session->userdata('fname'), 0, 5); ?> <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
       </a>
       <a href="<?php echo base_url("index.php/cart"); ?>" class="navbar-toggle navbar-mobile pull-right">
-        <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span><span class="badge">
-          <?php $detail1=$this->user->countproduct($this->session->userdata('uid'));
+        <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span><span class="badge" id="cartcounter">
+          <?php 
+            if(!empty($this->session->userdata('uid')))
+            {
+                $detail1=$this->user->countproduct($this->session->userdata('uid'));
                     if(!empty($detail1))
                       { 
                         echo $detail1; 
                       }
                   else{
                     echo"0";
-                    } ?>
+                    }
+            }
+            elseif(!empty($this->cart->contents()))
+            {
+              $i=0;
+              $cart = $this->cart->contents();
+              foreach($cart as $items)
+              {
+                $i++;
+              }
+               echo $i;
+            }
+            else{echo"0";} ?>
         </span>
       </a>
     </div>
@@ -95,21 +119,49 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a></li>
         <?php if ($this->session->userdata('fname')){ ?>
-        <li><a href="<?php echo base_url("index.php/profile"); ?>"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a></li>
+        <li class="dropdown">
+          <a class=" dropdown-toggle" type="button" data-toggle="dropdown" data-hover="dropdown">
+           <?php echo $result = substr($this->session->userdata('fname'), 0, 5); ?> <span class="glyphicon glyphicon-user" aria-hidden="true">  </span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="<?php echo base_url("index.php/profile"); ?>">Profile</a></li>
+            <li><a href="#" class="list-group-item"> Orders</a></li>
+            <li><a href="#" class="list-group-item"> Wishlist</a></li>
+            <li><a href="<?php echo base_url("index.php/profile/address"); ?>" class="list-group-item">Addresses</a></li>
+            <li><a href="<?php echo base_url("index.php/profile/account_details"); ?>" class="list-group-item">Account details</a></li>
+            <li><a href="<?php echo base_url("index.php/home/logout"); ?>" class="list-group-item">Logout</a></li>
+          </ul>
+        </li>
         <?php } else{?>
-        <li><a href="<?php echo base_url("index.php/login"); ?>"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a></li>
+        <li><a href="<?php echo base_url("index.php/login"); ?>"><span class="glyphicon glyphicon-user" aria-hidden="true"> </span></a></li>
         <?php }?>
         <li>
           <a href="<?php echo base_url("index.php/cart"); ?>">
               <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
-              <span class="badge"><?php $detail1=$this->user->countproduct($this->session->userdata('uid'));
-                        if(!empty($detail1))
-                          { 
-                            echo $detail1; 
-                          }
-                      else{
-                        echo"0";
-                        } ?>
+              <span class="badge" id="cartcounter1">
+              <?php 
+            if(!empty($this->session->userdata('uid')))
+            {
+                $detail1=$this->user->countproduct($this->session->userdata('uid'));
+                    if(!empty($detail1))
+                      { 
+                        echo $detail1; 
+                      }
+                  else{
+                    echo"0";
+                    }
+            }
+            elseif(!empty($this->cart->contents()))
+            {
+              $i=0;
+              $cart = $this->cart->contents();
+              foreach($cart as $items)
+              {
+                $i++;
+              }
+               echo $i;
+            }
+            else{echo"0";} ?>
               </span>
             </a>
           </li>

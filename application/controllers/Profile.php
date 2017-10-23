@@ -6,7 +6,7 @@ class profile extends CI_Controller
 		
 		parent::__construct();
 		$this->load->helper(array('form','url'));
-		$this->load->library(array('session', 'form_validation'));
+		$this->load->library(array('session', 'form_validation','cart'));
 		$this->load->database();
 		$this->load->model('user');
 		if(!$this->session->userdata('uid')){
@@ -14,7 +14,6 @@ class profile extends CI_Controller
          }
 
 	}
-	
 	public function index()
 	{
 		$this->form_validation->set_rules('fname', 'First Name', 'trim|required|alpha|min_length[3]|max_length[30]');
@@ -45,8 +44,9 @@ class profile extends CI_Controller
         	$data['country'] ="";
         	$data['pin'] = "";
         	}
-        	$this->load->view('header',$data);
-			$this->load->view('profile',$data);
+        	$this->load->view('client/header',$data);
+			$this->load->view('client/dashboard',$data);
+			$this->load->view('client/footer',$data);
         }
 		else
 		{
@@ -60,6 +60,43 @@ class profile extends CI_Controller
 			{
 				$this->session->set_flashdata('msg','<div class="alert alert-success text-center"> Successfully Updated</div>');
 				redirect('profile/index');
+			}
+			else
+			{
+				// error
+				$this->session->set_flashdata('msg','<div class="alert alert-danger text-center">Oops! Error.  Something Went Wrong</div>');
+				redirect('profile/index');
+			}
+		}
+	}
+	public function account_details()
+	{
+		$this->form_validation->set_rules('fname', 'First Name', 'trim|required|alpha|min_length[3]|max_length[30]');
+		$this->form_validation->set_rules('lname', 'Last Name', 'trim|required|alpha|min_length[3]|max_length[30]');
+		
+		if ($this->form_validation->run() == FALSE)
+        {
+        	$details = $this->user->get_user_by_id($this->session->userdata('uid'));
+        	$data['contact'] = $details[0]->contact;
+        	$data['fname'] = $details[0]->fname;
+        	$data['email'] = $details[0]->email;
+        	$data['lname'] = $details[0]->lname;
+        	$this->load->view('client/header',$data);
+			$this->load->view('client/profile',$data);
+			$this->load->view('client/footer');
+        }
+		else
+		{
+			$id=$this->session->userdata('uid');
+		    $fname=$_POST['fname'];
+		    $lname=$_POST['lname'];
+		    $contact=$_POST['contact'];
+			$result=$this->user->update($id, $fname, $lname, $contact);
+
+		if ($result)
+			{
+				$this->session->set_flashdata('msg','<div class="alert alert-success text-center"> Successfully Updated</div>');
+				redirect('profile/account_details');
 			}
 			else
 			{
@@ -115,55 +152,7 @@ class profile extends CI_Controller
 		$this->db->delete('rply', array('qid'=>$id));
     }
 
-     public function cartadd()
-	{
-	$uid=$this->session->userdata('uid');
-	$postid=$this->input->post('id');
-	$checkcart = $this->db->query('select * from cart 
-		                            where productid="'.$postid.'" 
-		                            and uid = "'.$uid.'"');
-	$resultcheckcart = $checkcart->num_rows();
-
-
-	if($resultcheckcart == '0' ){
-	$data=array('productid'=>$postid,'uid'=>$uid);
-	$this->db->insert('cart',$data);
-	}
-	else{
-
-		echo '<script language="javascript">';
-		echo 'alert("Already add to cart")';
-		echo '</script>';
-	}
-
-	}
-
-	 public function wishlist()
-	{
-	$uid=$this->session->userdata('uid');
-	$postid=$this->input->post('id');
-	$checkcart = $this->db->query('select * from wishlist 
-		                            where productid="'.$postid.'" 
-		                            and uid = "'.$uid.'"');
-	$resultcheckcart = $checkcart->num_rows();
-
-
-	if($resultcheckcart == '0' ){
-	$data=array('productid'=>$postid,'uid'=>$uid);
-	$this->db->insert('wishlist',$data);
-		echo '<script language="javascript">';
-		echo 'alert("Successfully add to cart")';
-		echo '</script>';
-	}
-	else{
-		$this->db->delete('wishlist', array('productid'=>$postid,
-										  'uid'=>$uid));
-		echo '<script language="javascript">';
-		echo 'alert("Already add to cart")';
-		echo '</script>';
-	}
-
-	}
+   
 
 	public function review()
     {
@@ -171,16 +160,13 @@ class profile extends CI_Controller
 				'uid' => $this->session->userdata('uid'),
 				'uname' => $this->input->post('uname'),
 				'productid' => $this->input->post('productid'),
-				'rate' =>  $this->input->post('rate'),
 				'review' => $this->input->post('review'));
 
 		$this->db->insert('review',$data);
 		$productid=$_POST['productid'];
-		$details=$this->user->get_product_id($productid);
-		$review=$details[0]->review +1;
-		$rate=$_POST['rate']+($details[0]->rate*$details[0]->review);
-		$rateupdate=$rate/$review;
-		$this->user->update_review($productid,$rateupdate,$review);
+		$details=$this->user->get_product_by_id($productid);
+		$review=$details[0]->review+1;
+		$this->user->update_review($productid,$review);
 		redirect($_SERVER['HTTP_REFERER']);
     }
 
@@ -191,8 +177,8 @@ class profile extends CI_Controller
 		$this->db->delete('wishlist', array('productid'=>$id,
                                           'uid'=>$uid));
     }
-
-    public function delivery()
+    
+    public function address()
     {
     	$this->form_validation->set_rules('fname', 'First Name', 'trim|required|alpha|min_length[3]|max_length[30]');
 		$this->form_validation->set_rules('lname', 'Last Name', 'trim|required|alpha|min_length[3]|max_length[30]');
@@ -202,6 +188,7 @@ class profile extends CI_Controller
         	$details = $this->user->get_user_by_id($this->session->userdata('uid'));
         	$data['category']=$this->user->showcategory();
 			$details1=$this->user->deliveryadd($this->session->userdata('uid'));
+			$details2=$this->user->shippingadd($this->session->userdata('uid'));
 			if(!empty($details1)){
 			$data['fname'] = $details1[0]->fname;
 			$data['lname'] = $details1[0]->lname;
@@ -210,7 +197,16 @@ class profile extends CI_Controller
 			$data['town'] = $details1[0]->town;
 			$data['addr'] = $details1[0]->addr;
 			$data['mob'] = $details1[0]->mob;
-			$data['pin'] = $details1[0]->pin;}
+			$data['pin'] = $details1[0]->pin;
+			$data['fname1'] = $details2[0]->fname;
+			$data['lname1'] = $details2[0]->lname;
+			$data['country1'] = $details2[0]->country;
+			$data['state1'] = $details2[0]->state;
+			$data['town1'] = $details2[0]->town;
+			$data['addr1'] = $details2[0]->addr;
+			$data['mob1'] = $details2[0]->mob;
+			$data['pin1'] = $details2[0]->pin;
+			}
 			else{
 			$data['fname'] = "";
 			$data['lname'] = "";
@@ -219,13 +215,19 @@ class profile extends CI_Controller
 			$data['town'] = "";
 			$data['addr'] ="";
 			$data['mob'] = "";
-			$data['pin'] ="";}
-        	$data['contact'] = $details[0]->contact;
-        	$data['email'] = $details[0]->email;
-        	$data['lname'] = $details[0]->lname;
-        	$data['address'] = $details[0]->address;
-        	$this->load->view('header',$data);
-			$this->load->view('delivery',$data);
+			$data['pin'] ="";
+			$data['fname1'] = "";
+			$data['lname1'] = "";
+			$data['country1'] = "";
+			$data['state1'] ="";
+			$data['town1'] = "";
+			$data['addr1'] ="";
+			$data['mob1'] = "";
+			$data['pin1'] ="";
+			}
+        	$this->load->view('client/header',$data);
+			$this->load->view('client/address',$data);
+			$this->load->view('client/footer');
         }
 		else
 		{	$uid =$this->session->userdata('uid');
@@ -242,13 +244,46 @@ class profile extends CI_Controller
 		if ($result)
 			{
 				$this->session->set_flashdata('msg','<div class="alert alert-success text-center"> Successfully Updated</div>');
-				redirect('profile');
+				redirect('profile/address');
 			}
 			else
 			{
 				// error
 				$this->session->set_flashdata('msg','<div class="alert alert-danger text-center">Oops! Error.  Something Went Wrong</div>');
-				redirect('profile');
+				redirect('profile/address');
+			}
+		}
+    }
+    public function shipping()
+    {
+    	$this->form_validation->set_rules('fname1', 'First Name', 'trim|required|alpha|min_length[3]|max_length[30]');
+		$this->form_validation->set_rules('lname1', 'Last Name', 'trim|required|alpha|min_length[3]|max_length[30]');
+		
+		if ($this->form_validation->run() == FALSE)
+        {
+        	redirect('profile');
+        }
+		else
+		{	$uid =$this->session->userdata('uid');
+			$data = array(
+				'fname' => $this->input->post('fname1'),
+				'lname' => $this->input->post('lname1'),
+				'mob' =>  $this->input->post('mob1'),
+				'country' => $this->input->post('country1'),
+				'addr' => $this->input->post('addr1'),
+				'state' => $this->input->post('state1'),
+				'town' => $this->input->post('town1'),
+				'pin' =>  $this->input->post('pin1'));
+				$result=$this->user->insert_shipping($data,$uid);
+		if ($result)
+			{
+				$this->session->set_flashdata('msg','<div class="alert alert-success text-center"> Successfully Updated</div>');
+				redirect('profile/address');
+			}
+			else
+			{
+				$this->session->set_flashdata('msg','<div class="alert alert-danger text-center">Oops! Error.  Something Went Wrong</div>');
+				redirect('profile/address');
 			}
 		}
     }
