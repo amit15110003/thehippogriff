@@ -3,12 +3,12 @@
       <div class="row">
       <div class="col-md-6 col-md-offset-3">
       <div class="box box-primary">
-        <?php $attributes = array("name" => "purity");
-      echo form_open("admin/purity", $attributes);?>
+        <?php $attributes = array("name" => "artist");
+      echo form_open("admin/artist", $attributes);?>
           <div class="box-body">
             <div class="form-group">
-              <label for="">purity</label>
-                <input type="text" class="form-control"  name="purity">
+              <label for="">artist</label>
+                <input type="text" class="form-control"  name="artist">
               </div>
             </div>
             <div class="box-footer">
@@ -23,7 +23,7 @@
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                  <th>purity</th>
+                  <th>artist</th>
                   <th></th>
                 </tr>
                 </thead>
@@ -32,8 +32,8 @@
         foreach( $query as $row)
           {?>
                 <tr>
-                  <td><?php echo $row->purity; ?> </td>
-                  <td><a  class="btn btn-primary" href="<?php echo base_url().'index.php/admin/Deletepurity/'.$row->id; ?>">delete</a></td>
+                  <td><?php echo $row->artist; ?> </td>
+                  <td><a  class="btn btn-primary" href="<?php echo base_url().'index.php/admin/Deleteartist/'.$row->id; ?>">delete</a></td>
                 </tr>
                  <?php }?>
                 </tfoot>

@@ -6,8 +6,12 @@
         <form role="form" method="post" enctype="multipart/form-data">
           <div class="box-body">
             <div class="form-group">
-              <label for="">category</label>
+              <label for="">Category</label>
                 <input type="text" class="form-control"  name="category">
+            </div>
+            <div class="form-group">
+              <label for="">Category Description</label>
+                <input type="text" class="form-control"  name="descr">
             </div>
             <div class="form-group">
                   <label for="exampleInputFile">File input</label>

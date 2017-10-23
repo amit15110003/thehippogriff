@@ -104,6 +104,7 @@
           <ul class="treeview-menu">
             <li><a href="<?php echo base_url('index.php/admin/scategory'); ?>"><i class="fa fa-circle-o"></i>Sub-Category</a></li>
             <li><a href="<?php echo base_url('index.php/admin/category'); ?>"><i class="fa fa-circle-o"></i> Category</a></li>
+            <li><a href="<?php echo base_url('index.php/admin/artist'); ?>"><i class="fa fa-circle-o"></i> Artist</a></li>
           </ul>
         </li>
         <li>

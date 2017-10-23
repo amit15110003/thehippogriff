@@ -131,6 +131,7 @@ class admin extends CI_Controller
             
 			$data = array(
 				'category' => $this->input->post('category'),
+				'descr' => $this->input->post('descr'),
 				'picture' => $picture
 			);
 		if ($this->user->insert_category($data))
@@ -249,7 +250,7 @@ class admin extends CI_Controller
         {
         	$details['query']=$this->user->showcategory();
         	$details['query1']=$this->user->showscategory();
-        	$details['query3']=$this->user->showpurity();
+        	$details['query3']=$this->user->showartist();
         	$details['query4']=$this->user->showtype();
         	$details['query2']=$this->user->showproduct();
      		$this->load->view('header');
@@ -481,24 +482,24 @@ public function updateproduct()
 	}
 	
 
-	public function purity()
-	{	$this->form_validation->set_rules('purity', 'purity', 'required');
+	public function artist()
+	{	$this->form_validation->set_rules('artist', 'artist', 'required');
 		if ($this->form_validation->run() == FALSE)
         {
-        	$details['query']=$this->user->showpurity();
+        	$details['query']=$this->user->showartist();
      		$this->load->view('header');
-		$this->load->view('purity',$details);
+		$this->load->view('artist',$details);
 		$this->load->view('footer');
         }
 		else
 		{
 			$data = array(
-				'purity' => $this->input->post('purity')
+				'artist' => $this->input->post('artist')
 			);
-		if ($this->user->insert_purity($data))
+		if ($this->user->insert_artist($data))
 			{
 				$this->session->set_flashdata('msg','<div class="alert alert-success text-center"> Successfully Updated</div>');
-				redirect('admin/purity');
+				redirect('admin/artist');
 			}
 			else
 			{
@@ -510,18 +511,18 @@ public function updateproduct()
 	
 		
 	}
-	public function Deletepurity($id)
+	public function Deleteartist($id)
 	{
 			
-		$details['query']=$this->user->showpurity();
+		$details['query']=$this->user->showartist();
      		$this->load->view('header');
-		$this->load->view('purity',$details);
+		$this->load->view('artist',$details);
 		$this->load->view('footer');
 	  
 	  echo "<script>
 	 x = confirm ('You want to proceed deleting?')";
 	 
-	  $r=$this->user->deletepurity($id);
+	  $r=$this->user->deleteartist($id);
 	  if($r){
 	  echo "Successfully Deleted Data";
 	  }
@@ -531,7 +532,7 @@ public function updateproduct()
 	  
 	   
 	  
-	  redirect('admin/purity');
+	  redirect('admin/artist');
 	 
 	}
 

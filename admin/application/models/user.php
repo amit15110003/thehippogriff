@@ -173,19 +173,19 @@ class user extends CI_Model
 		$this->db->where('id', $id);
 	return($this->db->delete('scategory'));
 	}
-	function insert_purity($data)
+	function insert_artist($data)
     {
-		return $this->db->insert('purity', $data);
+		return $this->db->insert('artist', $data);
 	}
-	public function showpurity()
+	public function showartist()
 	{
-		$query=$this->db->get('purity');
+		$query=$this->db->get('artist');
 		return $query->result();
 	}
-	public function deletepurity($id)
+	public function deleteartist($id)
 	{
 		$this->db->where('id', $id);
-	return($this->db->delete('purity'));
+	return($this->db->delete('artist'));
 	}
 	function insert_type($data)
     {
